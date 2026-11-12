@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PTI PARFUM | Parfum Anak Teknologi Informasi</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+html{scroll-behavior:smooth}.gridbg{background-image:linear-gradient(rgba(56,189,248,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.07) 1px,transparent 1px);background-size:42px 42px}
+.reveal{opacity:0;transform:translateY(35px);transition:.8s}.reveal.show{opacity:1;transform:none}
+.float{animation:float 5s ease-in-out infinite}@keyframes float{50%{transform:translateY(-18px) rotate(2deg)}}
+.card{transition:.35s}.card:hover{transform:translateY(-10px);box-shadow:0 25px 55px rgba(56,189,248,.18)}
+#loader{position:fixed;inset:0;z-index:999;background:#020617;display:flex;align-items:center;justify-content:center}
+</style>
+</head>
+<body class="bg-slate-950 text-white">
+<div id="loader"><div class="text-center"><div class="text-4xl font-black tracking-widest text-sky-400 animate-pulse">PTI PARFUM</div><p class="mt-4 text-xs tracking-[.3em] text-slate-400">INITIALIZING SCENT DATABASE...</p></div></div>
+
+<nav class="fixed top-0 z-50 w-full bg-slate-950/80 backdrop-blur border-b border-slate-800">
+<div class="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
+<b class="text-xl tracking-widest">PTI<span class="text-sky-400">PARFUM</span></b>
+<div class="hidden md:flex gap-6 text-sm text-slate-300"><a href="#produk">Produk</a><a href="#quiz">Quiz</a><a href="#promo">Promo</a><a href="#order">Pesan</a></div>
+<div class="flex gap-2"><button id="theme" class="border border-slate-700 px-3 py-2 rounded-lg">☀️</button><button onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})" class="bg-sky-400 text-slate-950 px-4 py-2 rounded-lg font-bold">Order</button></div>
+</div></nav>
+
+<section class="min-h-screen gridbg flex items-center pt-20 overflow-hidden">
+<div class="max-w-7xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
+<div class="reveal"><p class="text-sky-400 text-xs tracking-[.35em]">PARFUM ANAK TEKNOLOGI INFORMASI</p><h1 class="text-5xl md:text-7xl font-black mt-4">CODE YOUR<br><span class="text-sky-400">SCENT.</span></h1><p class="text-slate-400 mt-6 max-w-lg">Parfum premium dengan identitas futuristik. Temukan aroma yang sesuai dengan karakter kamu.</p><div class="flex gap-3 mt-8"><a href="#produk" class="bg-sky-400 text-slate-950 px-6 py-3 rounded-xl font-bold">Explore Collection</a><a href="#quiz" class="border border-slate-700 px-6 py-3 rounded-xl">Find My Scent</a></div></div>
+<div class="flex justify-center reveal"><div class="float relative"><div class="absolute inset-5 bg-sky-400/30 blur-3xl rounded-full"></div><div class="relative h-96 w-64 rounded-[3rem] bg-gradient-to-b from-sky-200 via-sky-500 to-slate-950 border border-white/30 shadow-2xl flex flex-col items-center justify-center"><b class="text-slate-950 text-5xl rotate-[-90deg]">PTI</b><div class="absolute bottom-10 text-center"><b class="tracking-widest">BLUE</b><br><small>ALGORITHM</small></div></div></div></div>
+</div></section>
+
+<section id="promo" class="py-20 px-5 bg-slate-900"><div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-6">
+<div class="reveal rounded-3xl p-10 border border-sky-400/30 bg-gradient-to-br from-sky-500/20 to-slate-950"><p class="text-sky-400 text-xs tracking-widest">FLASH OFFER</p><h2 class="text-4xl font-black mt-3">FREE DELIVERY</h2><p class="text-slate-400 mt-3">Gratis pengiriman untuk pembelian minimal Rp300.000.</p><div id="countdown" class="text-2xl font-black text-sky-300 mt-6"></div></div>
+<div class="reveal rounded-3xl p-10 border border-purple-400/30 bg-gradient-to-br from-purple-500/20 to-slate-950"><p class="text-purple-300 text-xs tracking-widest">FOLLOW OUR JOURNEY</p><h2 class="text-4xl font-black mt-3">CONNECT WITH PTI</h2><p class="text-slate-400 mt-3">Ikuti promosi, koleksi baru, dan konten teknologi kami.</p><div class="flex flex-wrap gap-3 mt-6"><a href="#" class="social px-4 py-3 rounded-xl bg-pink-500/20 border border-pink-400/30">📸 Instagram</a><a href="#" class="social px-4 py-3 rounded-xl bg-red-500/20 border border-red-400/30">▶️ TikTok</a><a href="#" class="social px-4 py-3 rounded-xl bg-green-500/20 border border-green-400/30">💬 WhatsApp</a></div><small class="block text-slate-500 mt-5">Ganti link sosial media dengan akun PTI Parfum kamu.</small></div>
+</div></section>
+
+<section id="produk" class="py-24 px-5"><div class="max-w-7xl mx-auto"><div class="text-center reveal"><p class="text-sky-400 text-xs tracking-widest">SCENT DATABASE</p><h2 class="text-4xl font-black mt-3">OUR COLLECTION</h2></div><div id="products" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"></div></div></section>
+
+<section id="quiz" class="py-24 px-5 bg-slate-900"><div class="max-w-2xl mx-auto reveal rounded-3xl border border-sky-400/25 p-8"><p class="text-sky-400 text-xs tracking-widest">SCENT MATCHING SYSTEM</p><h2 class="text-3xl font-black mt-3">Cari Parfum Kamu 🧪</h2><div class="grid gap-4 mt-6"><select id="mood" class="bg-slate-800 p-4 rounded-xl"><option value="fresh">Saya suka aroma fresh</option><option value="bold">Saya suka aroma bold</option><option value="sweet">Saya suka aroma sweet</option><option value="luxury">Saya suka aroma luxury</option></select><button onclick="recommend()" class="bg-sky-400 text-slate-950 p-4 rounded-xl font-black">TEMUKAN REKOMENDASI</button><div id="recommendation" class="hidden p-5 rounded-xl bg-sky-400/10 border border-sky-400/30"></div></div></div></section>
+
+<section id="order" class="py-24 px-5"><div class="max-w-3xl mx-auto reveal rounded-3xl border border-sky-400/25 bg-slate-900 p-8 md:p-10">
+<p class="text-sky-400 text-xs tracking-widest">SMART CHECKOUT</p><h2 class="text-4xl font-black mt-3">PESAN SEKARANG</h2><p class="text-slate-400 mt-2">Data dan total pesanan dibuat otomatis. Setelah checkout, WhatsApp dibuka dengan pesan yang sudah terisi.</p>
+<form id="form" class="grid md:grid-cols-2 gap-4 mt-8">
+<input name="name" required placeholder="Nama lengkap" class="p-4 rounded-xl bg-slate-800 border border-slate-700">
+<input name="phone" required placeholder="Nomor WhatsApp" class="p-4 rounded-xl bg-slate-800 border border-slate-700">
+<textarea name="address" required placeholder="Alamat lengkap" class="md:col-span-2 p-4 rounded-xl bg-slate-800 border border-slate-700 min-h-24"></textarea>
+<select id="product" name="product" class="p-4 rounded-xl bg-slate-800 border border-slate-700"></select>
+<input id="qty" name="qty" type="number" min="1" value="1" class="p-4 rounded-xl bg-slate-800 border border-slate-700">
+<div class="md:col-span-2 flex justify-between p-5 bg-sky-400/10 rounded-xl"><span>Total Otomatis</span><b id="total" class="text-sky-400">Rp0</b></div>
+<button class="md:col-span-2 bg-sky-400 text-slate-950 font-black p-4 rounded-xl">PESAN VIA WHATSAPP 🚀</button>
+</form></div></section>
+
+<button id="chatBtn" class="fixed right-5 bottom-5 z-40 bg-sky-400 text-slate-950 px-5 py-4 rounded-full font-bold shadow-xl">💬 Ask PTI</button>
+<div id="chat" class="hidden fixed right-5 bottom-20 w-80 max-w-[90vw] z-50 bg-slate-900 border border-sky-400/30 rounded-2xl overflow-hidden shadow-2xl"><div class="p-4 bg-sky-400 text-slate-950 font-black">✨ PTI Fragrance Assistant</div><div id="msgs" class="p-4 h-60 overflow-auto space-y-3"><div class="bg-slate-800 p-3 rounded-xl">Halo! Tanya rekomendasi parfum atau promo 👋</div></div><form id="chatForm" class="flex gap-2 p-3"><input id="chatInput" class="flex-1 p-3 rounded-xl bg-slate-800" placeholder="Tanya sesuatu..."><button class="bg-sky-400 text-slate-950 px-4 rounded-xl">➤</button></form></div>
+
+<footer class="py-10 text-center border-t border-slate-800"><b>PTI<span class="text-sky-400">PARFUM</span></b><p class="text-slate-500 text-sm mt-3">Parfum Anak Teknologi Informasi</p><div class="flex justify-center gap-5 mt-5 text-slate-400"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">WhatsApp</a></div></footer>
+<script src="script.js"></script></body></html>
